@@ -34,6 +34,34 @@
             max-width: 20%;
             height: auto;
         }
+
+        .photo-container {
+            display: flex; /* Используем Flexbox для создания сетки */
+            flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
+            gap: 20px; /* Расстояние между элементами */
+            justify-content: center; /* Центрируем элементы по горизонтали */
+            margin: 20px 0; /* Отступы сверху и снизу */
+        }
+        
+        .photo-item {
+            width: 300px; /* Ширина каждого элемента */
+            text-align: center; /* Центрируем текст */
+            border: 1px solid #ddd; /* Рамка вокруг элемента */
+            border-radius: 8px; /* Закруглённые углы */
+            overflow: hidden; /* Обрезаем содержимое, чтобы оно не выходило за рамки */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для красивого эффекта */
+            transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+        }
+        
+        .photo-item:hover {
+            transform: scale(1.05); /* Увеличиваем элемент при наведении */
+        }
+        
+        .photo-item p {
+            margin: 10px 0; /* Отступы для текста */
+            font-size: 16px; /* Размер текста */
+            color: #333; /* Цвет текста */
+        }
     </style>
 </head>
 <body>
@@ -56,7 +84,21 @@
         <p>На Александра II было совершено несколько покушений. Последнее из них, в 1881 году, стало для него роковым.</p>
         
         <h2>Фотографии</h2>
-        <img src="monument.jpg" alt="Памятник Александру II" class="monuments">
+        <div class="photo-container">
+            <div class="photo-item">
+                <img src="monument1.jpg" alt="Памятник_1 Александру II" class="monuments">
+                <p>Портрет Александра II</p>
+            </div>
+            <div class="photo-item">
+                <img src="monument2.jpg" alt="Памятник_2 Александру II" class="monuments">
+                <p>Памятник Александру II</p>
+            </div>
+            <div class="photo-item">
+                <img src="monument3.jpg" alt="Памятник_3 Александру II" class="monuments">
+                <p>Реформы Александра II</p>
+            </div>
+        </div>
+        
     </div>
 </body>
 </html>
