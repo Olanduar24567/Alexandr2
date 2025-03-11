@@ -36,31 +36,44 @@
         }
 
         .photo-container {
-            display: flex; /* Используем Flexbox для создания сетки */
-            flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
-            gap: 20px; /* Расстояние между элементами */
-            justify-content: center; /* Центрируем элементы по горизонтали */
-            margin: 20px 0; /* Отступы сверху и снизу */
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
         }
         
         .photo-item {
-            width: 300px; /* Ширина каждого элемента */
-            text-align: center; /* Центрируем текст */
-            border: 1px solid #ddd; /* Рамка вокруг элемента */
-            border-radius: 8px; /* Закруглённые углы */
-            overflow: hidden; /* Обрезаем содержимое, чтобы оно не выходило за рамки */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для красивого эффекта */
-            transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+            width: 300px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, filter 0.3s ease; /* Добавляем transition для filter */
         }
         
-        .photo-item:hover {
-            transform: scale(1.05); /* Увеличиваем элемент при наведении */
+        .photo-item img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
         
         .photo-item p {
-            margin: 10px 0; /* Отступы для текста */
-            font-size: 16px; /* Размер текста */
-            color: #333; /* Цвет текста */
+            margin: 10px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        
+        /* Затемнение всех фотографий, кроме той, на которую наведён курсор */
+        .photo-container:hover .photo-item {
+            filter: brightness(0.5); /* Затемнение */
+        }
+        
+        /* Убираем затемнение для фотографии, на которую наведён курсор */
+        .photo-container:hover .photo-item:hover {
+            filter: brightness(1); /* Нормальная яркость */
+            transform: scale(1.05); /* Увеличение */
         }
     </style>
 </head>
